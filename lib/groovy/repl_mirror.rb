@@ -37,8 +37,8 @@ the defining statement.
 
 Example:
 
-def foo = 'hello! I am a local variable'
-foo = 'hi! I am a binding variable'
+def foo = 'hello! I am a local variable. I will vanish after this statement executes.'
+foo = 'hi! I am a binding variable. I live on!'
 
 See 'http://groovy.codehaus.org/Scoping+and+the+Semantics+of+%22def%22'
 for more information.
@@ -49,9 +49,9 @@ for more information.
         def self.load_dependencies
           unless @loaded
             Groovy.load_dependencies
-            import 'groovy.lang.GroovyShell'
-            import 'java.io.PrintWriter'
-            import 'java.io.StringWriter'
+            java_import 'groovy.lang.GroovyShell'
+            java_import 'java.io.PrintWriter'
+            java_import 'java.io.StringWriter'
             @loaded = true
           end
         end
